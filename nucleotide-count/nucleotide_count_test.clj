@@ -17,15 +17,15 @@
   (is (= {\A 0, \T 0, \C 0, \G 8}
          (nucleotide-count/nucleotide-counts "GGGGGGGG"))))
 
-(deftest counts-only-thymidine
-  (is (= 1 (nucleotide-count/count \T "GGGGGTAACCCGG"))))
+;(deftest counts-only-thymidine
+  ;(is (= 1 (nucleotide-count/count \T "GGGGGTAACCCGG"))))
 
-(deftest validates-nucleotides
-  (is (thrown-with-msg? Exception #"invalid nucleotide" (nucleotide-count/count \X "GACT"))))
+;(deftest validates-nucleotides
+  ;(is (thrown-with-msg? Exception #"invalid nucleotide" (nucleotide-count/count \X "GACT"))))
 
-(deftest counts-all-nucleotides
-  (let [s "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"]
-    (is (= {\A 20, \T 21, \G 17, \C 12}
-           (nucleotide-count/nucleotide-counts s)))))
+;(deftest counts-all-nucleotides
+  ;(let [s "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"]
+    ;(is (= {\A 20, \T 21, \G 17, \C 12}
+           ;(nucleotide-count/nucleotide-counts s)))))
 
 (run-tests)

@@ -12,8 +12,8 @@
 (ns bob)
 
 (defn response-for [input]
-  (cond
-    (phrase/taciturn? input) "Fine. Be that way!"
-    (phrase/holler? input) "Whoa, chill out!"
-    (phrase/askance? input) "Sure."
-    :else "Whatever."))
+  (condp apply [input]
+    phrase/taciturn? "Fine. Be that way!"
+    phrase/holler? "Whoa, chill out!"
+    phrase/askance? "Sure."
+    "Whatever."))
